@@ -1,0 +1,28 @@
+- hosts: devbox
+  gather_facts: yes
+
+  vars_files:
+    - vars/main.yml
+
+  pre_tasks:
+    - name: Update apt cache if needed.
+      apt: update_cache=yes cache_valid_time=3600
+      become: yes
+    - name: installing repo for Java 8 in Ubuntu
+      apt_repository: repo='ppa:openjdk-r/ppa'  
+  
+vars:
+    pip_install_packages:
+      - name: docker
+        state: latest
+      - name: awscli  
+    java_packages:
+      - openjdk-8-jdk
+  roles:
+    - geerlingguy.firewall
+    - geerlingguy.java
+    - geerlingguy.pip
+    - geerlingguy.docker
+    - geerlingguy.nodejs
+    - sansible.zookeeper
+    - sansible.kafka

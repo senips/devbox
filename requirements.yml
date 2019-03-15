@@ -1,0 +1,8 @@
+---
+- src: geerlingguy.firewall
+- src: geerlingguy.nodejs
+- src: geerlingguy.java
+- src: geerlingguy.docker
+- src: geerlingguy.pip
+- src: sansible.zookeeper
+- src: sansible.kafka
