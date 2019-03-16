@@ -36,12 +36,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define :devbox do |devbox|
   end
 
-  # # Ansible provisioner.
-  # config.vm.provision "ansible" do |ansible|
-  #   ansible.compatibility_mode = "2.0"
-  #   ansible.playbook = "provisioning/playbook.yml"
-  #   ansible.inventory_path = "provisioning/inventory"
-  #   ansible.become = true
-  # end
+  # Ansible provisioner.
+  config.vm.provision "ansible" do |ansible|
+    ansible.compatibility_mode = "2.0"
+    ansible.playbook = "provisioning/playbook.yml"
+    ansible.inventory_path = "provisioning/inventory"
+    ansible.become = true
+  end
 
 end
