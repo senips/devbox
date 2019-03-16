@@ -2,8 +2,8 @@
 
 ## Background
 
-Vagrant and VirtualBox for developements
- 
+Vagrant and VirtualBox for developements  (Tested with only Mac but should work for most of the Linux variations)
+
 ## Getting Started
 
 This README file is inside a folder that contains a `Vagrantfile` (hereafter this folder shall be called the [vagrant_root]), which tells Vagrant how to set up your virtual machine in VirtualBox.
@@ -15,6 +15,7 @@ To use the vagrant file, you will need to have done the following:
   3. Install [Ansible](https://www.ansible.com/) ([guide for installing Ansible](http://docs.ansible.com/ansible/latest/intro_installation.html))
   4. Open a shell prompt (Terminal app on a Mac) and cd into the folder containing the `Vagrantfile`
   5. Run the following command to install the necessary Ansible roles for this profile: `$ ansible-galaxy install -r requirements.yml`
+  6. ssh-keygen -t rsa -b 4096 -C "your_email@example.com"  and name the key file as devbox
 
 Once all of that is done, you can simply type in `vagrant up`, and Vagrant will create a new VM, install the base box, and configure it.
 
