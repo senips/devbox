@@ -11,13 +11,13 @@
     - name: installing repo for Java 8 in Ubuntu
       apt_repository: repo='ppa:openjdk-r/ppa'  
   
-vars:
-    pip_install_packages:
-      - name: docker
-        state: latest
-      - name: awscli  
-    java_packages:
-      - openjdk-8-jdk
+  vars:
+      pip_install_packages:
+        - name: docker
+          state: latest
+        - name: awscli  
+      java_packages:
+        - openjdk-8-jdk
   roles:
     - geerlingguy.firewall
     - geerlingguy.java
