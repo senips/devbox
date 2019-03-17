@@ -29,6 +29,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
  
     sleep 8
     ssh-add ~/.ssh/devbox
+    sudo add-apt-repository ppa:jonathonf/python-3.6
+    sudo apt-get update
+    sudo apt-get -y install python3.6
+    sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.6 2
+    sudo apt-get -y install python3-pip
+    sudo apt-get update
+    pip3 install invoke
     echo "finished"
   EOC
 
