@@ -12,16 +12,23 @@
       apt_repository: repo='ppa:openjdk-r/ppa'  
   
   vars:
+      pip_executable: pip3
       pip_install_packages:
+        - name: ansible-vault
+        - name: invoke
         - name: docker
-          state: latest
         - name: awscli  
+        - name: boto3
+        - name: requests
+        
       java_packages:
         - openjdk-8-jdk
+        
   roles:
     - geerlingguy.firewall
     - geerlingguy.java
     - geerlingguy.pip
+    - geerlingguy.java
     - geerlingguy.docker
     - geerlingguy.nodejs
     - sansible.zookeeper
