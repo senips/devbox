@@ -14,8 +14,8 @@
   vars:
       pip_executable: pip3
       pip_install_packages:
-        - name: ansible-vault
         - name: invoke
+        - name: ansible-vault
         - name: docker
         - name: awscli  
         - name: boto3
@@ -23,13 +23,11 @@
         
       java_packages:
         - openjdk-8-jdk
-        
+      nodejs_version: "11.x"
   roles:
-    - geerlingguy.firewall
-    - geerlingguy.java
     - geerlingguy.pip
+    - geerlingguy.nodejs    
     - geerlingguy.java
     - geerlingguy.docker
-    - geerlingguy.nodejs
     - sansible.zookeeper
     - sansible.kafka
