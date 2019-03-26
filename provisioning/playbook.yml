@@ -16,7 +16,6 @@
       pip_install_packages:
         - name: invoke
         - name: ansible-vault
-        - name: docker
         - name: awscli  
         - name: boto3
         - name: requests
