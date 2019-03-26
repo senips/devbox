@@ -33,14 +33,14 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     echo "optional: your env variables and other bash setups will be merged from your host machine ~/devbox_profile.sh into vagrant profile"
   EOC
 
-  # config.vm.provision "shell", inline: <<-EOC
-  #   eval `ssh-agent`
-  #   eval `ssh-add /home/$(whoami)/.ssh/devbox`
-  #   sudo add-apt-repository ppa:jonathonf/python-3.6
-  #   sudo apt-get -y install python3-pip
-  #   sudo apt-get update
-  #   echo "pre setup finished"
-  # EOC
+  config.vm.provision "shell", inline: <<-EOC
+    eval `ssh-agent`
+    eval `ssh-add /home/$(whoami)/.ssh/devbox`
+    sudo add-apt-repository ppa:jonathonf/python-3.6
+    sudo apt-get -y install python3-pip
+    sudo apt-get update
+    echo "pre setup finished"
+  EOC
 
  
 
@@ -48,22 +48,22 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define :devbox do |devbox|
   end
 
-  # # Ansible provisioner.
-  # config.vm.provision "ansible" do |ansible|
-  #   ansible.compatibility_mode = "2.0"
-  #   ansible.playbook = "provisioning/playbook.yml"
-  #   ansible.inventory_path = "provisioning/inventory"
-  #   ansible.become = true
-  # end
+  # Ansible provisioner.
+  config.vm.provision "ansible" do |ansible|
+    ansible.compatibility_mode = "2.0"
+    ansible.playbook = "provisioning/playbook.yml"
+    ansible.inventory_path = "provisioning/inventory"
+    ansible.become = true
+  end
 
-  # config.vm.provision "shell", inline: <<-EOC
-  #   sudo chown -R $(whoami) /usr/local
-  #   sudo chown -R $(whoami)  /usr/local/lib/npm/bin
-  #   sudo chown -R $(whoami)  /usr/local/lib/npm/lib
-  #   sudo chown -R $(whoami)  /usr/local/lib/npm/lib/node_modules
-  #   eval `npm install -g n`    #by default installed 10.15.3 but this is for switching node versions
-  #   curl -0 -L https://npmjs.com/install.sh | sudo sh  #make sure right npm version installed.
-  #   echo "post setup finished"
-  # EOC
+  config.vm.provision "shell", inline: <<-EOC
+    sudo chown -R $(whoami) /usr/local
+    sudo chown -R $(whoami)  /usr/local/lib/npm/bin
+    sudo chown -R $(whoami)  /usr/local/lib/npm/lib
+    sudo chown -R $(whoami)  /usr/local/lib/npm/lib/node_modules
+    eval `npm install -g n`    #by default installed 10.15.3 but this is for switching node versions
+    curl -0 -L https://npmjs.com/install.sh | sudo sh  #make sure right npm version installed.
+    echo "post setup finished"
+  EOC
 
 end
