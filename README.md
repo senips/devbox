@@ -21,7 +21,7 @@ Once all of that is done, you can simply type in `vagrant up`, and Vagrant will 
 
 Once the new VM is up and running (after `vagrant up` is complete and you're back at the command prompt), you can log into it via SSH if you'd like by typing in `vagrant ssh`. Otherwise, the next steps are below.
  
- What is installed for your developement box?
+##### What is installed for your developement box?
  
  - Python 3.6 
  - Java openjdk-8-jdk
@@ -35,4 +35,11 @@ Once the new VM is up and running (after `vagrant up` is complete and you're bac
       - awscli  
       - boto3
       - requests  
-     
+      
+##### How to connect?     
+
+If you have configured correctly with your devbox ssh-keys as specified above then you should be able connect via SSH as follows
+
+ssh -A vagrant@192.168.57.57
+
+    * Firewalls disabled and all ports are open for your developement purpose. so 192.168.57.57:<port> is open to access from host machine
