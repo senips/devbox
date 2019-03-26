@@ -42,8 +42,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     echo "pre setup finished"
   EOC
 
- 
-
   # Set the name of the VM. See: http://stackoverflow.com/a/17864388/100134
   config.vm.define :devbox do |devbox|
   end
@@ -57,11 +55,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
   config.vm.provision "shell", inline: <<-EOC
-    sudo chown -R $(whoami) /usr/local
-    sudo chown -R $(whoami)  /usr/local/lib/npm/bin
-    sudo chown -R $(whoami)  /usr/local/lib/npm/lib
-    sudo chown -R $(whoami)  /usr/local/lib/npm/lib/node_modules
-    eval `npm install -g n`    #by default installed 10.15.3 but this is for switching node versions
+    sudo npm install n -g    #by default node 10.15.3 install but this is for switching node versions during developement
     curl -0 -L https://npmjs.com/install.sh | sudo sh  #make sure right npm version installed.
     echo "post setup finished"
   EOC

@@ -6,3 +6,4 @@
 - src: geerlingguy.pip
 - src: sansible.zookeeper
 - src: sansible.kafka
+- src: nephelaiio.tmux
