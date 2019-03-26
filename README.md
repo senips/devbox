@@ -42,4 +42,4 @@ If you have configured correctly with your devbox ssh-keys as specified above th
 
 ssh -A vagrant@192.168.57.57
 
-    * Firewalls disabled and all ports are open for your developement purpose. so 192.168.57.57:<port> is open to access from host machine
+   * Firewall is disabled so all the ports are open for your developement purpose. so 192.168.57.57:<port> is open to access from host machine
