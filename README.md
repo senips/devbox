@@ -16,6 +16,7 @@ To use the vagrant file, you will need to have done the following:
   4. Open a shell prompt (Terminal app on a Mac) and cd into the folder containing the `Vagrantfile`
   5. Run the following command to install the necessary Ansible roles for this profile: `$ ansible-galaxy install -r requirements.yml`
   6. ssh-keygen -t rsa -b 4096 -C "your_email@example.com"  and name the key file as devbox
+  7. Optional: ~/devbox_profile.sh if exists in your host machine then it will be merged into vagrant profile which helps you to setup your enviroments every time you login.
 
 Once all of that is done, you can simply type in `vagrant up`, and Vagrant will create a new VM, install the base box, and configure it.
 
@@ -55,3 +56,7 @@ By default, your entire home folder is shared with the guest machine.  After Vag
 Just add your devbox.pub key that you generated in setp #6 above to your github account That's it!    
 Vagrant ssh
 git clone <your repo>    
+
+##### What if I need to set some environment variables during my vagrant startup?
+
+See the optional step #7
