@@ -43,3 +43,15 @@ If you have configured correctly with your devbox ssh-keys as specified above th
 ssh -A vagrant@192.168.57.57
 
    * Firewall is disabled so all the ports are open for your developement purpose. so 192.168.57.57:<port> is open to access from host machine
+
+
+##### How to share my source code between host and guest VM?
+
+By default, your entire home folder is shared with the guest machine.  After Vagrant ssh,  ~/myhost is directly mapped to your home folder.   So you can either edit your source code in host machine or guest machines.   
+
+
+##### How to checkout source?
+
+Just add your devbox.pub key that you generated in setp #6 above to your github account That's it!    
+Vagrant ssh
+git clone <your repo>    
