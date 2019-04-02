@@ -47,7 +47,7 @@ ssh -A vagrant@192.168.57.57
 
 ##### How to share my source code between host and guest VM?
 
-By default, your entire home folder is shared with the guest machine.  After Vagrant ssh,  ~/myhost is directly mapped to your home folder.   So you can either edit your source code in host machine or guest machines.   
+By default, your entire home folder is shared with the guest machine.  After Vagrant ssh,  ~/myhost is directly mapped to your host machine's home folder.   BTW, you can either work your source code in host machine or guest machines.   
 
 
 ##### How to checkout source?
