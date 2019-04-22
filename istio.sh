@@ -2,6 +2,7 @@
 set -e
 VERSION="1.9.2"
 
+
 # Update, get python-software-properties in order to get add-apt-repository,
 # then update (for latest git version):
 apt-get update
